@@ -24,7 +24,7 @@ def game():
 	score = 0
 	pad_x = screen_width/2-50
 	pad_vel = 0
-	ball_vel_x = 0
+	ball_vel_x = +0.8
 	ball_vel_y = -0.8
 	ball_x = pad_x + 50
 	ball_y = 567
@@ -93,9 +93,9 @@ def game():
 			
 			# Moveing the Pad
 			if move_right == True:
-				pad_x += 0.6
+				pad_x += 0.8
 			if move_left == True:
-				pad_x -= 0.6
+				pad_x -= 0.8
 
 			# Updating the Velocity of the Ball
 			if ball_x <= 5:
@@ -112,10 +112,6 @@ def game():
 			# Ball and Pad Collison
 			if ball_y+8 >= 580 and ball_x >= pad_x and ball_x <= pad_x+100:
 				ball_vel_y = -ball_vel_y
-				if ball_x >= pad_x and ball_x <= pad_x+45:
-					ball_vel_x = -0.8
-				if ball_x >= pad_x+55 and ball_x <= pad_x+100:
-					ball_vel_x = +0.8
 
 			# Updating the Coordinates of the Ball
 			if ball_move == True:
